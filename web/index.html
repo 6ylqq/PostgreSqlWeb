@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+  <head>
+    <title>$Title$</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $.get("gradeservlet",{},function (data) {
+
+          console.log(data);
+          //选择grades的tbody
+          var grades=$("#grades");
+          var tr=$("<tr></tr>");
+          //遍历取到的数据
+          $(data).each(function () {
+            var td1="<td>+this.sname</td>";
+            var td2="<td>+this.cname</td>";
+            var td3="<td>+this.score</td>";
+
+            //使用html拼接一下
+            tr.html("<td>"+td1+"</td><td>"+td2+"</td>"+"<td>"+td3+"</td>")
+
+            //把tr加到tbody里面
+            grades.append(tr);
+          })
+
+        })
+      })
+    </script>
+  </head>
+  <body>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>学生名字</th>
+        <th>课程名称</th>
+        <th>成绩</th>
+      </tr>
+      </thead>
+      <tbody id="grades">
+
+      </tbody>
+    </table>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+  <head>
+    <title>$Title$</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $.get("gradeservlet",{},function (data) {
+
+          //取一下我们写到缓存的已经查好的学生成绩
+          console.log(data);
+
+          //选择grades的tbody
+          var grades=$("#grades");
+          var html="";
+          //遍历取到的数据
+          $.each(data,function () {
+
+            //使用html拼接一下
+            html+= "<tr><td>" + this.sname + "</td> <td>" + this.cname + "</td> <td>"+this.score+"</td></tr>";
+          })
+          grades.append(html);
+        })
+      })
+    </script>
+  </head>
+  <body>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>学生名字</th>
+        <th>课程名称</th>
+        <th>成绩</th>
+      </tr>
+      </thead>
+      <tbody id="grades">
+
+      </tbody>
+    </table>
+  </div>
+  </body>
+</html>
