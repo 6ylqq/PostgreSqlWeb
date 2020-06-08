@@ -21,6 +21,7 @@
     </build>
 
     <dependencies>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -97,5 +98,12 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.10</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.5</version>
+        </dependency>
+
     </dependencies>
 </project>

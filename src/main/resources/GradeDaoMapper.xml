@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylqq.dao.GradeDao">
+    <select id="findAll" resultType="com.ylqq.main.Grade">
+select S.sname AS sname,
+        C.cname AS cname,
+        G.score AS score
+        from
+        student AS S
+         join grade g on S.sid = g.sid
+          JOIN course c on g.cid = c.cid
+</select>
+</mapper>
